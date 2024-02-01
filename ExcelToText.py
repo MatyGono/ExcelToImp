@@ -10,7 +10,7 @@ for i in range(48):
         machine = 'N{}'.format(i+1)
 
     wb = xw.Book('testInput.xlsm')
-    ws = wb.sheets['Seznam']
+    ws = wb.sheets['Sheet']
     ws['C2'].value = machine
     wb.save('temp.xlsm')
     wb.close()
@@ -19,7 +19,7 @@ for i in range(48):
 
     toPrint = data[0]
 
-    impfile = open('TEST/{}'.format(machine), 'w')
+    impfile = open('Import/{}'.format(machine), 'w')
 
     for row in toPrint:
         if type(row) == float:
